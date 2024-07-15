@@ -1,3 +1,5 @@
+package util;
+
 public class PrimeHelper {
     public static boolean isPrime(int n) {
         if (n <= 1) return false;
@@ -7,7 +9,7 @@ public class PrimeHelper {
         return true;
     }
 
-    public long sumOfFirstNPrimes(long n) {
+    public static long sumOfFirstNPrimes(long n) {
         int count = 0;
         long sum = 0;
         int candidatePrime = 2;

@@ -1,4 +1,4 @@
-package VehicleTracker;
+package threadsafety.monitorvehicletracker;
 
 import java.awt.*;
 

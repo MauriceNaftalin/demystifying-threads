@@ -1,15 +1,15 @@
-package VehicleTracker;
+package threadsafety.naivevehicletracker;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
 
 public class TrackerGui extends JFrame {
-    private final MonitorVehicleTracker vehicles;
+    private final NaiveVehicleTracker vehicles;
     private final int FRAME_SIZE = 400;
-    public TrackerGui(MonitorVehicleTracker vehicles) {
+    public TrackerGui(NaiveVehicleTracker vehicles) {
         this.vehicles = vehicles;
-        this.setTitle("Vehicle Positions");
+        this.setTitle("NaïveTracker Vehicle Positions");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel mainPanel = new JPanel(new BorderLayout());
 
@@ -47,7 +47,7 @@ public class TrackerGui extends JFrame {
     }
 
     public void refresh() {
-//        Map<Vehicle, MutablePoint> locations = vehicles.getVehicleLocations();
+//        Map<Vehicle, Point> locations = vehicles.getVehicleLocations();
 //        for (String key : locations.keySet()){
 //            renderVehicle(key,locations.get(key));
 //        }
@@ -84,17 +84,6 @@ public class TrackerGui extends JFrame {
                 g.setColor(v.color());
                 g.fillOval(80 * mp.x - 11, 80 * mp.y - 11,22, 22);
             }
-/*
-V            g.setColor(Color.BLACK);
-            for (MutablePoint mp : vehicles.getPickupPoints().values()) {
-                g.drawOval(70 * mp.x - 1, 70 * mp.y - 1 ,24, 24);
-            }
-
-            g.setColor(Color.WHITE);
-            for (MutablePoint mp : vehicles.getPickupPoints().values()) {
-                g.fillOval(70 * mp.x, 70 * mp.y,22, 22);
-            }
-*/
         }
     }
 }

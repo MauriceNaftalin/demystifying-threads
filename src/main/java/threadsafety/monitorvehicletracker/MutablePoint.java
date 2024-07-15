@@ -1,4 +1,4 @@
-package VehicleTracker;
+package threadsafety.monitorvehicletracker;
 
 //@NotThreadSafe
 public class MutablePoint {
