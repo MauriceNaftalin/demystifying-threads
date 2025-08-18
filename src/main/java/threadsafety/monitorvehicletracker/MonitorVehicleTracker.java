@@ -38,7 +38,7 @@ public class MonitorVehicleTracker {
         }
     }
 
-    public MutablePoint getLocationReversed(Vehicle v) {
+    public synchronized MutablePoint getLocationReversed(Vehicle v) {
         MutablePoint mp = new MutablePoint(vehicleLocations.get(v));
         int tempx = mp.x;
         mp.x = mp.y;

@@ -15,14 +15,14 @@ public class VehicleDespatcher {
     }
 
     public void updateVehiclePosition(Vehicle vehicle) {
-        final IntUnaryOperator intUnaryOperator;
+        final IntUnaryOperator positionChanger;
         final boolean changeX = ThreadLocalRandom.current().nextBoolean();
         if (changeX) {
-            intUnaryOperator = x -> calculateNewPosition(x, MAX_X);
+            positionChanger = x -> calculateNewPosition(x, MAX_X);
         } else {
-            intUnaryOperator = y -> calculateNewPosition(y, MAX_Y);
+            positionChanger = y -> calculateNewPosition(y, MAX_Y);
         }
-        monitorVehicleTracker.updateCoordinateFromExisting(vehicle, intUnaryOperator, changeX);
+        monitorVehicleTracker.updateCoordinateFromExisting(vehicle, positionChanger, changeX);
     }
 
     private int calculateNewPosition(int current, int max) {
